@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "prettier"],
     "plugins": ["prettier"],
     "rules": {
         "strict": 0,
@@ -54,6 +54,7 @@
         "no-case-declarations": 0,
         "lines-between-class-members": ["error", "always"],
         "no-plusplus": 0,
-        "no-mixed-operators": 0
+        "no-mixed-operators": 0,
+        "prettier/prettier": ["error"]
     }
 }
