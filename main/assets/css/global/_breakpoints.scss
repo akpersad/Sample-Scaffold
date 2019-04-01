@@ -1,15 +1,37 @@
-$breakpoints: (
-  xs: 30rem,   // ~480px
-  sm: 37.5rem, // ~600px
-  md: 64rem,   // ~1024px
-  lg: 80rem,   // ~1280px
-  xl: 90rem    // ~1440px
-);
-
-@mixin breakpoint($breakpoint, $logic: false) {
-  @if( $logic ) {
-    @media #{$logic} and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
-  } @else {
-    @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
-  }
+@mixin breakpoint($class) {
+    @if $class == sm {
+        @media (min-width: 576px) {
+            @content;
+        }
+    } @else if $class == sm-only {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $class == md {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $class == lg {
+        @media (min-width: 992px) {
+            @content;
+        }
+    } @else if $class == xl {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $class == xxl {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $class == xxxl {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    } @else if $class == xxxxl {
+        @media (max-width: 0) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint mixin supports: sm, md, lg, xl";
+    }
 }
