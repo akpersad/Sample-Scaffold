@@ -4,7 +4,6 @@ TO RUN:
 
 ```
 npm install
-gulp everything
 npm run gulp watch
 ```
 
