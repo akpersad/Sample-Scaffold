@@ -1,36 +1,51 @@
 {
-    "name": "sample-scaffold",
-    "version": "1.1.1",
-    "description": "Beginner Scaffold for Gulp Projects",
-    "main": "index.js",
-    "keywords": [
-        "scss",
-        "css",
-        "framework",
-        "design-system",
-        "html",
-        "front-end",
-        "buttons",
-        "colors",
-        "forms",
-        "grid",
-        "mixins",
-        "spacing",
-        "typography"
-    ],
-    "scripts": {
-        "gulp": "gulp",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Amber Creative Lab <info@ambercreative.co>",
-    "license": "MIT",
-    "devDependencies": {
-        "autoprefixer": "^9.4.3",
-        "browser-sync": "^2.26.3",
-        "gulp": "^4.0.0",
-        "gulp-postcss": "^8.0.0",
-        "gulp-sass": "^4.0.2",
-        "postcss-calc": "^7.0.1",
-        "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
-    }
+  "name": "sample-scaffold",
+  "version": "1.1.1",
+  "description": "Beginner Scaffold for Gulp Projects",
+  "main": "index.js",
+  "keywords": [
+    "scss",
+    "css",
+    "framework",
+    "design-system",
+    "html",
+    "front-end",
+    "buttons",
+    "colors",
+    "forms",
+    "grid",
+    "mixins",
+    "spacing",
+    "typography"
+  ],
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amber Creative Lab <info@ambercreative.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "autoprefixer": "^9.4.3",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables",
+    "rollup": "^1.7.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.2",
+    "rollup-plugin-node-resolve": "^4.0.1"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  }
 }
