@@ -1,0 +1,118 @@
+:root,
+[data-theme="default"] {
+    // main
+    @include defineColorHSL(--color-primary-darker, 220, 90%, 36%);
+    @include defineColorHSL(--color-primary-dark, 220, 90%, 46%);
+    @include defineColorHSL(--color-primary, 220, 90%, 56%);
+    @include defineColorHSL(--color-primary-light, 220, 90%, 66%);
+    @include defineColorHSL(--color-primary-lighter, 220, 90%, 76%);
+
+    @include defineColorHSL(--color-accent-darker, 355, 90%, 41%);
+    @include defineColorHSL(--color-accent-dark, 355, 90%, 51%);
+    @include defineColorHSL(--color-accent, 355, 90%, 61%);
+    @include defineColorHSL(--color-accent-light, 355, 90%, 71%);
+    @include defineColorHSL(--color-accent-lighter, 355, 90%, 81%);
+
+    // black + white
+    @include defineColorHSL(--color-black, 240, 8%, 12%);
+    @include defineColorHSL(--color-white, 0, 0%, 100%);
+
+    // feedback
+    @include defineColorHSL(--color-success-darker, 94, 48%, 36%);
+    @include defineColorHSL(--color-success-dark, 94, 48%, 46%);
+    @include defineColorHSL(--color-success, 94, 48%, 56%);
+    @include defineColorHSL(--color-success-light, 94, 48%, 66%);
+    @include defineColorHSL(--color-success-lighter, 94, 48%, 76%);
+
+    @include defineColorHSL(--color-error-darker, 355, 90%, 41%);
+    @include defineColorHSL(--color-error-dark, 355, 90%, 51%);
+    @include defineColorHSL(--color-error, 355, 90%, 61%);
+    @include defineColorHSL(--color-error-light, 355, 90%, 71%);
+    @include defineColorHSL(--color-error-lighter, 355, 90%, 81%);
+
+    @include defineColorHSL(--color-warning-darker, 46, 100%, 41%);
+    @include defineColorHSL(--color-warning-dark, 46, 100%, 51%);
+    @include defineColorHSL(--color-warning, 46, 100%, 61%);
+    @include defineColorHSL(--color-warning-light, 46, 100%, 71%);
+    @include defineColorHSL(--color-warning-lighter, 46, 100%, 81%);
+
+    // color contrasts
+    @include defineColorHSL(--color-bg, 0, 0%, 100%);
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 95%);
+    @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
+    @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
+    @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
+    @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
+}
+
+[data-theme] {
+    background-color: var(--color-bg);
+    color: var(--color-contrast-high);
+}
+
+//colors
+
+//whites
+$white: rgb(255, 255, 255); //#ffffff;
+$wild_sand: rgb(245, 245, 245); //#F5F5F5
+
+//blacks
+$black: rgb(0, 0, 0); //#000000;
+$cod_black: rgb(5, 5, 5); //#050505;
+$mine_shaft: rgb(42, 42, 42); //#2A2A2A;
+$block_black: rgb(30, 30, 30); //#1E1E1E
+$mb_black: rgb(15, 15, 15); //#0F0F0F
+
+//grays
+$cod_gray: rgb(14, 14, 14); //#0E0E0E;
+$dove_gray: rgb(104, 103, 103); //  #686767
+$dove_gray_1: rgb(112, 112, 112); //  #707070
+$night_rider: rgb(51, 51, 51); //#333333
+$gray: rgb(142, 142, 142); //#8E8E8E;
+$alabaster: rgb(247, 247, 247); //#F7F7F7
+$emperor: rgb(85, 85, 85); // #555555
+$white_smoke: rgb(237, 235, 235); //EDEBEB
+$concrete: rgb(242, 242, 242); //#F2F2F2
+$code_gray: rgb(14, 14, 14); //#0E0E0E;
+$text_gray: rgb(123, 123, 123); // #7b7b7b
+$dark_gray: rgb(138, 138, 138); // #8a8a8a
+$hover_gray: rgb(27, 27, 27); // #1B1B1B
+$loading_gray: rgb(75, 75, 75); // #4B4B4B;
+$tooltip_gray: rgb(142, 142, 142); //#8e8e8e
+$french_gray: rgb(207, 207, 210); // #CFCFD2
+$dusty_gray: rgb(156, 156, 156); // #9C9C9C
+$silver_chalice: rgb(174, 174, 174); //#AEAEAE
+$medium_gray: rgb(42, 42, 42); //#2a2a2a
+
+//reds
+$torch_red: rgb(255, 31, 31); //#FF1F1F;
+$red: rgb(230, 0, 0); // #E60000
+$pink: rgb(255, 127, 127); //#ff7f7f;
+$alizarin_crimson: rgb(216, 35, 37); //#D82325;
+$error_red: rgb(255, 0, 0); // #FF0000
+
+//footer gray
+$light_gray: rgb(78, 78, 78); //4E4E4E;
+
+//silvers
+$silver: rgb(200, 198, 198); //#C8C6C6;
+$light_silver: rgb(195, 195, 195); //#C3C3C3;
+$bombay: rgb(174, 176, 179); //AEB0B3;
+$gallery: rgb(238, 238, 238); //EEEEEE;
+$tooltip_silver: rgb(213, 213, 213); // d5d5d5
+$alto: rgb(221, 220, 220); // #DDDCDC
+//borders
+$border_black: 1px solid $black;
+$opacity_border_back: 1px solid rgba(0, 0, 0, 0.1);
+$silver_2: rgb(193, 193, 193); //c1c1c1
+
+//blue
+$malibu: rgb(119, 186, 255); //#77BAFF
+
+//orange
+$coral: rgb(255, 127, 80);
+$tomato: rgb(255, 99, 71);
+$orangered: rgb(255, 69, 0);
+$gold: rgb(255, 215, 0);
+$orange: rgb(255, 165, 0);
+$darkorange: rgb(255, 140, 0);
