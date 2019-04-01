@@ -1,5 +1,13 @@
 Built off of Cody House: https://github.com/CodyHouse/codyhouse-framework
 
+TO RUN:
+
+```
+npm install
+gulp everything
+npm run gulp watch
+```
+
 The framework is composed of:
 
 -   **A collection of SCSS files** that compile into a \_global.scss file. Make sure to import this style before your own;
