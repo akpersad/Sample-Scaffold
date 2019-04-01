@@ -1,6 +1,14 @@
 :root {
-  --zindex-header: 2;
-  --zindex-popover: 4;
-  --zindex-fixed-element: 5;
-  --zindex-overlay: 10; // modals and dialogs
+    --zindex-header: 2;
+    --zindex-popover: 4;
+    --zindex-fixed-element: 5;
+    --zindex-overlay: 10; // modals and dialogs
 }
+
+$zindex-zero: 0;
+$zindex-lowest: 1;
+$zindex-low: 2;
+$zindex-medium: 3;
+$zindex-high: 4;
+$zindex-higher: 5;
+$zindex-highest: 999;

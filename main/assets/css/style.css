@@ -245,7 +245,7 @@ img, video, svg {
 }
 
 @supports (--css: variables) {
-  @media (min-width: 64rem) {
+  @media (min-width: 768px) {
     :root {
       --space-unit:  1.25em;
     }
@@ -411,14 +411,14 @@ img, video, svg {
   max-width: var(--container-width-xs);
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .container--adaptive, .container--adaptive-lg {
     max-width: 64rem;
     max-width: var(--container-width-md);
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1024px) {
   .container--adaptive, .container--adaptive-lg {
     max-width: 80rem;
     max-width: var(--container-width-lg);
@@ -430,7 +430,7 @@ img, video, svg {
   max-width: var(--container-width-xs);
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .container--adaptive-sm {
     max-width: 45rem;
     max-width: var(--container-width-sm);
@@ -442,7 +442,7 @@ img, video, svg {
   max-width: var(--container-width-xs);
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .container--adaptive-md {
     max-width: 64rem;
     max-width: var(--container-width-md);
@@ -454,14 +454,14 @@ img, video, svg {
   max-width: var(--container-width-xs);
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .container--adaptive-xl {
     max-width: 64rem;
     max-width: var(--container-width-md);
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1024px) {
   .container--adaptive-xl {
     max-width: 90rem;
     max-width: var(--container-width-xl);
@@ -611,77 +611,7 @@ img, video, svg {
   max-width: 100%;
 }
 
-@media (min-width: 30rem) {
-  .col--xs {
-    -ms-flex-positive: 1;
-        flex-grow: 1;
-    -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-    max-width: 100%;
-  }
-  .col--xs-1 {
-    -ms-flex-preferred-size: 8.33%;
-        flex-basis: 8.33%;
-    max-width: 8.33%;
-  }
-  .col--xs-2 {
-    -ms-flex-preferred-size: 16.66%;
-        flex-basis: 16.66%;
-    max-width: 16.66%;
-  }
-  .col--xs-3 {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-    max-width: 25%;
-  }
-  .col--xs-4 {
-    -ms-flex-preferred-size: 33.33%;
-        flex-basis: 33.33%;
-    max-width: 33.33%;
-  }
-  .col--xs-5 {
-    -ms-flex-preferred-size: 41.66%;
-        flex-basis: 41.66%;
-    max-width: 41.66%;
-  }
-  .col--xs-6 {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-    max-width: 50%;
-  }
-  .col--xs-7 {
-    -ms-flex-preferred-size: 58.33%;
-        flex-basis: 58.33%;
-    max-width: 58.33%;
-  }
-  .col--xs-8 {
-    -ms-flex-preferred-size: 66.66%;
-        flex-basis: 66.66%;
-    max-width: 66.66%;
-  }
-  .col--xs-9 {
-    -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
-    max-width: 75%;
-  }
-  .col--xs-10 {
-    -ms-flex-preferred-size: 83.33%;
-        flex-basis: 83.33%;
-    max-width: 83.33%;
-  }
-  .col--xs-11 {
-    -ms-flex-preferred-size: 91.66%;
-        flex-basis: 91.66%;
-    max-width: 91.66%;
-  }
-  .col--xs-12 {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 37.5rem) {
+@media (min-width: 576px) {
   .col--sm {
     -ms-flex-positive: 1;
         flex-grow: 1;
@@ -751,7 +681,7 @@ img, video, svg {
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .col--md {
     -ms-flex-positive: 1;
         flex-grow: 1;
@@ -821,7 +751,7 @@ img, video, svg {
   }
 }
 
-@media (min-width: 80rem) {
+@media (min-width: 992px) {
   .col--lg {
     -ms-flex-positive: 1;
         flex-grow: 1;
@@ -891,7 +821,7 @@ img, video, svg {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1024px) {
   .col--xl {
     -ms-flex-positive: 1;
         flex-grow: 1;
@@ -1184,7 +1114,7 @@ img, video, svg {
 }
 
 @supports (--css: variables) {
-  @media (min-width: 64rem) {
+  @media (min-width: 768px) {
     :root {
       --text-base-size: 1.25em;
       --text-scale-ratio: 1.25;
@@ -1373,7 +1303,7 @@ u {
   margin-bottom: 0;
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 576px) {
   .text-component__block--left, .text-component__block--right,
   .text-component__img--left, .text-component__img--right {
     width: 45%;
@@ -1394,7 +1324,7 @@ u {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1024px) {
   .text-component__block--outset, .text-component__img--outset {
     width: calc(100% + 10.5em);
     width: calc(100% + 2*var(--space-xxl));
@@ -1804,61 +1734,49 @@ u {
   --zindex-overlay: 10;
 }
 
-@media not all and (min-width: 30rem) {
-  .display--xs {
-    display: none !important;
-  }
-}
-
-@media (min-width: 30rem) {
-  .hide--xs {
-    display: none !important;
-  }
-}
-
-@media not all and (min-width: 37.5rem) {
+@media (min-width: 576px) {
   .display--sm {
     display: none !important;
   }
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 576px) {
   .hide--sm {
     display: none !important;
   }
 }
 
-@media not all and (min-width: 64rem) {
+@media (min-width: 768px) {
   .display--md {
     display: none !important;
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
   .hide--md {
     display: none !important;
   }
 }
 
-@media not all and (min-width: 80rem) {
+@media (min-width: 992px) {
   .display--lg {
     display: none !important;
   }
 }
 
-@media (min-width: 80rem) {
+@media (min-width: 992px) {
   .hide--lg {
     display: none !important;
   }
 }
 
-@media not all and (min-width: 90rem) {
+@media (min-width: 1024px) {
   .display--xl {
     display: none !important;
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1024px) {
   .hide--xl {
     display: none !important;
   }
