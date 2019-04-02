@@ -13,16 +13,23 @@ The framework is composed of:
 -   **A util.js file** with some utility functions that are used in the [CodyHouse components](https://codyhouse.co/ds/components). Make sure to import this before the component script file.
 
 ```text
-codyhouse-framework/
+Sample-Scaffold/
 └── main/
     ├── assets/
     │   ├── css/
+    │   │   ├── components/
+    │   │   │   ├── Project Components (CSS)
+    │   │   ├── dist/
+    │   │   │   ├── bootstrap.css
+    │   │   │   ├── style.css
+    │   │   │   ├── Compiled and Minyfied styles
     │   │   ├── globals/
     │   │   │   ├── _accessibility.scss
     │   │   │   ├── _alignment.scss
     │   │   │   ├── _breakpoints.scss
     │   │   │   ├── _buttons.scss
     │   │   │   ├── _colors.scss
+    │   │   │   ├── _common-variables.scss
     │   │   │   ├── _forms.scss
     │   │   │   ├── _grid-layout.scss
     │   │   │   ├── _icons.scss
@@ -37,6 +44,17 @@ codyhouse-framework/
     │   │   ├── style.css
     │   │   └── style.scss
     │   └── js/
+    │       ├── combined-scripts/
+    │           ├── combined-scripts.js
+    │       ├── components/
+    │           ├── Project Components (JS)
+    │       ├── components-min/
+    │           ├── index-min.js
+    │           ├── Minyfied JS Files
+    │       ├── dist/
+    │           ├── index.js
+    │           ├── Babel processed JS files
+    │       └── index.js
     │       └── util.js
     └── index.html
 ```
