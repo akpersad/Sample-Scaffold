@@ -18,11 +18,15 @@
     "spacing",
     "typography"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akpersad/Sample-Scaffold.git"
+  },
   "scripts": {
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Amber Creative Lab <info@ambercreative.co>",
+  "author": "Andrew Persad",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.0",
