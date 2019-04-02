@@ -9,6 +9,7 @@ const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 const minify = require("gulp-minify");
 const eslint = require("gulp-eslint");
+const cleanCSS = require("gulp-clean-css");
 
 function reload(done) {
 	browserSync.reload();
@@ -16,16 +17,30 @@ function reload(done) {
 }
 
 gulp.task("sass", function() {
+	return (
+		gulp
+			.src([
+				"main/assets/css/_global.scss",
+				"main/assets/css/style.scss",
+				"node_modules/bootstrap/scss/bootstrap.scss"
+			])
+			//Use Expanded for full output of CSS. Use Compressed for minified version
+			.pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+			.pipe(postcss([autoprefixer(), cssvariables({ preserve: true }), calc()]))
+			.pipe(gulp.dest("main/assets/css/dist"))
+			.pipe(
+				browserSync.reload({
+					stream: true
+				})
+			)
+	);
+});
+
+gulp.task("minify-css", () => {
 	return gulp
-		.src(["main/assets/css/global.scss", "main/assets/css/style.scss"])
-		.pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-		.pipe(postcss([autoprefixer(), cssvariables({ preserve: true }), calc()]))
-		.pipe(gulp.dest("main/assets/css/dist/style.css"))
-		.pipe(
-			browserSync.reload({
-				stream: true
-			})
-		);
+		.src("main/assets/css/dist/*.css")
+		.pipe(cleanCSS({ compatibility: "*" }))
+		.pipe(gulp.dest("main/assets/css/components-min"));
 });
 
 gulp.task(
@@ -81,15 +96,20 @@ gulp.task("everything", gulp.series(["scripts", "mini", "concat"]));
 
 gulp.task(
 	"watch",
-	gulp.series(["browserSync", "sass", "linter", "scripts", "mini", "concat"], function() {
-		gulp.watch("main/assets/css/**/*.scss", gulp.series(["sass"]));
-		gulp.watch("main/*.html", gulp.series(reload));
-		gulp.watch("main/assets/js/index.js", gulp.series(["linter"]));
-		gulp.watch("main/assets/js/components/*.js", gulp.series(["linter"]));
-		gulp.watch("main/assets/js/index.js", gulp.series(["scripts"]));
-		gulp.watch("main/assets/js/components/*.js", gulp.series(["scripts"]));
-		gulp.watch("main/assets/js/dist/*.js", gulp.series(["mini"]));
-		gulp.watch("main/assets/js/components-min/*-min.js", gulp.series(["concat"]));
-		gulp.watch("main/assets/js/**/*.js", gulp.series(reload));
-	})
+	gulp.series(
+		["browserSync", "sass", "minify-css", "linter", "scripts", "mini", "concat"],
+		function() {
+			gulp.watch("main/assets/css/style.scss", gulp.series(["sass"]));
+			gulp.watch("main/assets/css/components/*.scss", gulp.series(["sass"]));
+			// gulp.watch("main/assets/css/dist/*.css", gulp.series(["minify-css"]));
+			gulp.watch("main/*.html", gulp.series(reload));
+			gulp.watch("main/assets/js/index.js", gulp.series(["linter"]));
+			gulp.watch("main/assets/js/components/*.js", gulp.series(["linter"]));
+			gulp.watch("main/assets/js/index.js", gulp.series(["scripts"]));
+			gulp.watch("main/assets/js/components/*.js", gulp.series(["scripts"]));
+			gulp.watch("main/assets/js/dist/*.js", gulp.series(["mini"]));
+			gulp.watch("main/assets/js/components-min/*-min.js", gulp.series(["concat"]));
+			gulp.watch("main/assets/js/**/*.js", gulp.series(reload));
+		}
+	)
 );
