@@ -96,20 +96,17 @@ gulp.task("everything", gulp.series(["scripts", "mini", "concat"]));
 
 gulp.task(
 	"watch",
-	gulp.series(
-		["browserSync", "sass", "minify-css", "linter", "scripts", "mini", "concat"],
-		function() {
-			gulp.watch("main/assets/css/style.scss", gulp.series(["sass"]));
-			gulp.watch("main/assets/css/components/*.scss", gulp.series(["sass"]));
-			// gulp.watch("main/assets/css/dist/*.css", gulp.series(["minify-css"]));
-			gulp.watch("main/*.html", gulp.series(reload));
-			gulp.watch("main/assets/js/index.js", gulp.series(["linter"]));
-			gulp.watch("main/assets/js/components/*.js", gulp.series(["linter"]));
-			gulp.watch("main/assets/js/index.js", gulp.series(["scripts"]));
-			gulp.watch("main/assets/js/components/*.js", gulp.series(["scripts"]));
-			gulp.watch("main/assets/js/dist/*.js", gulp.series(["mini"]));
-			gulp.watch("main/assets/js/components-min/*-min.js", gulp.series(["concat"]));
-			gulp.watch("main/assets/js/**/*.js", gulp.series(reload));
-		}
-	)
+	gulp.series(["browserSync", "sass", "linter", "scripts", "mini", "concat"], function() {
+		gulp.watch("main/assets/css/style.scss", gulp.series(["sass"]));
+		gulp.watch("main/assets/css/components/*.scss", gulp.series(["sass"]));
+		// gulp.watch("main/assets/css/dist/*.css", gulp.series(["minify-css"]));
+		gulp.watch("main/*.html", gulp.series(reload));
+		gulp.watch("main/assets/js/index.js", gulp.series(["linter"]));
+		gulp.watch("main/assets/js/components/*.js", gulp.series(["linter"]));
+		gulp.watch("main/assets/js/index.js", gulp.series(["scripts"]));
+		gulp.watch("main/assets/js/components/*.js", gulp.series(["scripts"]));
+		gulp.watch("main/assets/js/dist/*.js", gulp.series(["mini"]));
+		gulp.watch("main/assets/js/components-min/*-min.js", gulp.series(["concat"]));
+		gulp.watch("main/assets/js/**/*.js", gulp.series(reload));
+	})
 );
