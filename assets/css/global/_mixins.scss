@@ -7,7 +7,7 @@
 // crop top space on text elements - caused by line height
 @mixin lhCrop($line-height, $capital-letter: 1) {
   &::before {
-    content: '';
+    content: "";
     display: block;
     height: 0;
     width: 0;
@@ -16,16 +16,16 @@
 }
 
 // CSS triangle
-@mixin triangle ($direction: up, $width: 12px, $color: red) {
+@mixin triangle($direction: up, $width: 12px, $color: red) {
   width: 0;
   height: 0;
   border: $width solid transparent;
 
-  @if( $direction == left ) {
+  @if ($direction == left) {
     border-right-color: $color;
-  } @else if( $direction == right ) {
+  } @else if($direction == right) {
     border-left-color: $color;
-  } @else if( $direction == down ) {
+  } @else if($direction == down) {
     border-top-color: $color;
   } @else {
     border-bottom-color: $color;
@@ -50,36 +50,215 @@
 // --------------------------------
 
 // define HSL color variable
-@mixin defineColorHSL($color, $hue, $saturation, $lightness){
-  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color}-h: #{$hue};
+  #{$color}-s: #{$saturation};
+  #{$color}-l: #{$lightness};
 }
 
 // return color with different opacity value
-@function alpha($color, $opacity){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
+@function alpha($color, $opacity) {
+  $color: str-replace($color, "var(");
+  $color: str-replace($color, ")");
+  $color-h: var(#{$color + "-h"});
+  $color-s: var(#{$color + "-s"});
+  $color-l: var(#{$color + "-l"});
   @return hsla($color-h, $color-s, $color-l, $opacity);
 }
 
 // return color with different lightness value
-@function lightness($color, $lightnessMultiplier){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
+@function lightness($color, $lightnessMultiplier) {
+  $color: str-replace($color, "var(");
+  $color: str-replace($color, ")");
+  $color-h: var(#{$color + "-h"});
+  $color-s: var(#{$color + "-s"});
+  $color-l: var(#{$color + "-l"});
   @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
 }
 
 // replace substring with another string
 // credits: https://css-tricks.com/snippets/sass/str-replace-function/
-@function str-replace($string, $search, $replace: '') {
+@function str-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
   @return $string;
+}
+
+@mixin featuredModuleHeightAndSpacing() {
+  @include breakpoint(md) {
+    margin-bottom: em(110);
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: em(100);
+  }
+}
+
+@mixin featuredModuleLastItemAboveCta() {
+  margin-bottom: em(34);
+
+  @include breakpoint(md) {
+    margin-bottom: em(33);
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: em(32);
+  }
+}
+
+@mixin mb-header {
+  font-family: $font_tradegothic_bold;
+  text-transform: uppercase;
+}
+
+@mixin mb-header-one {
+  @include mb-header;
+  font-size: $font-size-42;
+  line-height: rem(40);
+  letter-spacing: rem(-1);
+
+  @include breakpoint(md) {
+    font-size: $font-size-64;
+    line-height: rem(60);
+    letter-spacing: rem(-1.5);
+  }
+
+  @include breakpoint(xxl) {
+    font-size: $font-size-80;
+    line-height: rem(75);
+    letter-spacing: rem(-2);
+  }
+}
+
+@mixin mb-header-two {
+  @include mb-header;
+  font-size: $font-size-36;
+  line-height: rem(35);
+  letter-spacing: rem(-0.5);
+
+  @include breakpoint(md) {
+    font-size: $font-size-48;
+    line-height: rem(45);
+    letter-spacing: rem(-1);
+  }
+
+  @include breakpoint(xxl) {
+    font-size: $font-size-60;
+    line-height: rem(55);
+    letter-spacing: rem(-1.5);
+  }
+}
+
+@mixin mb-header-three {
+  @include mb-header;
+  font-size: $font-size-28;
+  line-height: rem(30);
+  letter-spacing: 0;
+
+  @include breakpoint(xxl) {
+    font-size: $font-size-36;
+    line-height: rem(35);
+    letter-spacing: rem(-0.5);
+  }
+}
+
+@mixin mb-navigation-one {
+  @include mb-header;
+  font-size: $font-size-18;
+  line-height: rem(20);
+  letter-spacing: 0;
+}
+
+@mixin mb-navigation-two {
+  @include mb-header;
+  font-size: $font-size-12;
+  line-height: rem(20);
+  letter-spacing: rem(1);
+}
+
+@mixin mb-navigation-three {
+  font-family: $font_proxima_regular;
+  text-transform: uppercase;
+  font-size: $font-size-12;
+  line-height: rem(15);
+  letter-spacing: rem(0.5);
+}
+
+@mixin mb-navigation-four {
+  font-family: $font_proxima_nova;
+  font-size: $font-size-12;
+  line-height: rem(20);
+  letter-spacing: rem(0.5);
+}
+
+@mixin mb-text-one {
+  font-family: $font_minion;
+  font-size: $font-size-14;
+  line-height: rem(20);
+  letter-spacing: 0;
+
+  @include breakpoint(md) {
+    font-size: $font-size-18;
+    line-height: rem(25);
+  }
+
+  @include breakpoint(xxl) {
+    font-size: $font-size-22;
+    line-height: rem(30);
+  }
+}
+
+@mixin mb-text-two {
+  @include mb-text-one;
+  @include breakpoint(xxl) {
+    font-size: $font-size-18;
+    line-height: rem(25);
+  }
+}
+
+@mixin mb-text-three {
+  font-family: $font_minion;
+  font-size: $font-size-14;
+  line-height: rem(20);
+  letter-spacing: 0;
+}
+
+@mixin mb-chart {
+  font-family: $font_proxima_nova;
+  font-size: $font-size-12;
+  line-height: rem(30);
+  letter-spacing: rem(1);
+  text-transform: uppercase;
+
+  @include breakpoint(md) {
+    line-height: rem(23);
+  }
+
+  @include breakpoint(xxl) {
+    font-size: $font-size-13;
+    line-height: rem(35);
+    letter-spacing: rem(1.8);
+  }
+}
+
+@mixin contentFadeIn($delay: 0s) {
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.4, 0.2, 0.1, 1) $delay;
+
+  .mb-fade-in-content & {
+    opacity: 1;
+  }
+
+  .mb-animation-disabled & {
+    opacity: 1;
+  }
+}
+
+@mixin disableHover {
+  opacity: 1;
+  transition: none;
 }
