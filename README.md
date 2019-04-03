@@ -45,15 +45,15 @@ Sample-Scaffold/
     │   │   └── style.scss
     │   └── js/
     │       ├── combined-scripts/
-    │           ├── combined-scripts.js
+    │       │   ├── combined-scripts.js
     │       ├── components/
-    │           ├── Project Components (JS)
+    │       │   ├── Project Components (JS)
     │       ├── components-min/
-    │           ├── index-min.js
-    │           ├── Minyfied JS Files
+    │       │   ├── index-min.js
+    │       │   ├── Minyfied JS Files
     │       ├── dist/
-    │           ├── index.js
-    │           ├── Babel processed JS files
+    │       │   ├── index.js
+    │       │   ├── Babel processed JS files
     │       └── index.js
     │       └── util.js
     └── index.html
@@ -65,7 +65,7 @@ The Framework and the Components are built following the principle of progressiv
 
 ```html
 <script>
-    document.getElementsByTagName("html")[0].className += " js";
+	document.getElementsByTagName("html")[0].className += " js";
 </script>
 ```
 
