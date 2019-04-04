@@ -7,6 +7,12 @@ npm install
 npm run gulp watch
 ```
 
+To push to github pages: 
+
+```
+git subtree push --prefix main origin gh-pages
+```
+
 The framework is composed of:
 
 -   **A collection of SCSS files** that compile into a \_global.scss file. Make sure to import this style before your own;
