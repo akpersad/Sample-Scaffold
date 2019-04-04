@@ -3,3 +3,5 @@ node_modules
 config.php
 package-lock.json
 npm-debug.log
+.sfdx
+.vscode

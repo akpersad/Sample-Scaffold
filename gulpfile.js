@@ -10,6 +10,7 @@ const concat = require("gulp-concat");
 const minify = require("gulp-minify");
 const eslint = require("gulp-eslint");
 const cleanCSS = require("gulp-clean-css");
+const gulpRename = require("gulp-rename");
 
 function reload(done) {
 	browserSync.reload();
@@ -26,6 +27,11 @@ gulp.task("sass", function() {
 			])
 			//Use Expanded for full output of CSS. Use Compressed for minified version
 			.pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+			.pipe(
+				gulpRename(path => {
+					path.basename += "-min";
+				})
+			)
 			.pipe(postcss([autoprefixer(), cssvariables({ preserve: true }), calc()]))
 			.pipe(gulp.dest("main/assets/css/dist"))
 			.pipe(
@@ -99,7 +105,6 @@ gulp.task(
 	gulp.series(["browserSync", "sass", "linter", "scripts", "mini", "concat"], function() {
 		gulp.watch("main/assets/css/style.scss", gulp.series(["sass"]));
 		gulp.watch("main/assets/css/components/*.scss", gulp.series(["sass"]));
-		// gulp.watch("main/assets/css/dist/*.css", gulp.series(["minify-css"]));
 		gulp.watch("main/*.html", gulp.series(reload));
 		gulp.watch("main/assets/js/index.js", gulp.series(["linter"]));
 		gulp.watch("main/assets/js/components/*.js", gulp.series(["linter"]));
