@@ -10,9 +10,18 @@
 		<link rel="stylesheet" href="assets/css/dist/style-min.css" />
 		<title>Title</title>
 	</head>
+
 	<body>
-		<h1 class="test">Hello World</h1>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/combined-scripts/combined-scripts.js"></script>
+		<div class="loading-container d-flex justify-content-center align-items-center">
+			<div class="spinner-border" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<div class="main-container d-none">
+			<h1 class="test">Hello World</h1>
+			<div id="test" data-load-template="./assets/html/components/test.html"></div>
+		</div>
+
+		<script src="assets/js/loader-files/load-partials-es5-min.js"></script>
 	</body>
 </html>
