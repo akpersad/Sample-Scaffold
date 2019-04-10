@@ -10,9 +10,38 @@
 		<link rel="stylesheet" href="assets/css/dist/style-min.css" />
 		<title>Title</title>
 	</head>
+
 	<body>
-		<h1 class="test">Hello World</h1>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/combined-scripts/combined-scripts.js"></script>
+		<div class="loading-container">
+			<div class="loading-container_overlay"></div>
+			<div class="loading-container_cogs">
+				<div class="loading-container_cogs__top">
+					<div class="top_part"></div>
+					<div class="top_part"></div>
+					<div class="top_part"></div>
+					<div class="top_hole"></div>
+				</div>
+				<div class="loading-container_cogs__left">
+					<div class="left_part"></div>
+					<div class="left_part"></div>
+					<div class="left_part"></div>
+					<div class="left_hole"></div>
+				</div>
+				<div class="loading-container_cogs__bottom">
+					<div class="bottom_part"></div>
+					<div class="bottom_part"></div>
+					<div class="bottom_part"></div>
+					<div class="bottom_hole"></div>
+				</div>
+				<p>loading</p>
+			</div>
+		</div>
+
+		<div class="main-container d-none">
+			<h1 class="test">Hello World</h1>
+			<div id="test" data-load-template="./assets/html/components/test.html"></div>
+		</div>
+
+		<script src="assets/js/loader-files/load-partials-es5-min.js"></script>
 	</body>
 </html>

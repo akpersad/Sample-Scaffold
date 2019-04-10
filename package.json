@@ -54,12 +54,16 @@
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^5.0.0",
+    "gulp-file": "^0.4.0",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-tap": "^1.0.1",
+    "gulp-uglify": "^3.0.2",
     "is-module": "^1.0.0",
     "output-file-sync": "^2.0.1",
+    "path": "^0.12.7",
     "popper.js": "^1.14.7",
     "postcss-calc": "^7.0.1",
     "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables",
@@ -67,7 +71,8 @@
     "prettier-linter-helpers": "^1.0.0",
     "rollup": "^1.8.0",
     "sourcemap-codec": "^1.4.4",
-    "user-home": "^2.0.0"
+    "user-home": "^2.0.0",
+    "yargs": "^13.2.2"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
