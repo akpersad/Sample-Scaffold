@@ -31,7 +31,6 @@
 				if (completedCalls === componentCount) {
 					var displayNone = "d-none";
 					loadingContainer.classList.add(displayNone);
-					loadingContainer.classList.remove("d-flex");
 					mainContainer.classList.remove(displayNone);
 					var bodySelect = document.querySelector("body");
 					var scriptMake = document.createElement("script");

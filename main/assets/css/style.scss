@@ -1,13 +1,4 @@
 // Make sure to include any files from ./components
 @import "global";
+@import "components/loading-icon";
 @import "components/test";
-
-.loading-container {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  .spinner-border {
-    height: 5rem;
-    width: 5rem;
-  }
-}

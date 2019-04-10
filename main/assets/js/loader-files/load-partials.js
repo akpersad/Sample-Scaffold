@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 (function() {
 	const allDivs = document.querySelector(".main-container").querySelectorAll("div");
 	const loadingContainer = document.querySelector(".loading-container");
@@ -27,7 +28,6 @@
 				if (completedCalls === componentCount) {
 					const displayNone = "d-none";
 					loadingContainer.classList.add(displayNone);
-					loadingContainer.classList.remove("d-flex");
 					mainContainer.classList.remove(displayNone);
 					const bodySelect = document.querySelector("body");
 					const scriptMake = document.createElement("script");
