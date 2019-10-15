@@ -7,7 +7,7 @@ npm install
 npm run gulp watch
 ```
 
-To push to github pages: 
+To push to github pages:
 
 ```
 git subtree push --prefix main origin gh-pages

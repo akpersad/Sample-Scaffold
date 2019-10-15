@@ -6,11 +6,15 @@
 		"node": true
 	},
 	"rules": {
+		"import/prefer-default-export": 0,
+		"no-restricted-syntax": 0,
 		"strict": 0,
 		"no-console": 0,
 		"no-tabs": 0,
 		"no-loop-func": 1,
 		"no-unused-vars": 1,
+		"no-undef": 1,
+		"func-names": 0,
 		"indent": [
 			0,
 			"tab",
